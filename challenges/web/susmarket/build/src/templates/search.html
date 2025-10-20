@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block content %}
+<h2>Search Products</h2>
+<form method="post" class="mb-3">
+  <input
+    class="form-control"
+    type="text"
+    name="product_name"
+    placeholder="Enter product name"
+  />
+  <button class="btn btn-primary mt-2" type="submit">Search</button>
+</form>
+
+{% if products %}
+<h4>Results:</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Stock</th>
+    <th>Action</th>
+  </tr>
+  {% for p in products %}
+  <tr>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>${{ p[2] }}</td>
+    <td>{{ p[3] }}</td>
+    <td>
+      <a
+        href="{{ url_for('buy_product', product_id=p[0]) }}"
+        class="btn btn-sm btn-success"
+        >Buy</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %} {% endblock %}

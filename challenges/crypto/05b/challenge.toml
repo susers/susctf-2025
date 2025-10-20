@@ -1,0 +1,19 @@
+title = "05-ezStream"
+author = "huangx607087"
+difficulty = "Easy+"
+flag = "susctf{gcd_p_minus_one_and_exponential_makes_this_stream_cipher_insecure_048c159d26ae37bf}"
+
+description = """
+
+快来找找这个流密码系统的漏洞吧:D。
+
+"""
+
+[container]
+port = 9999
+cpu = 4 # 0.1*1个cpu
+memory = 160 # unit: MiB
+storage = 400 # unit: MiB **注意：包含镜像大小**
+
+[attachments]
+path = ["build/src/task.py"]

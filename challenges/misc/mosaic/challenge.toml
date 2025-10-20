@@ -1,0 +1,12 @@
+title = "mosaic"
+author = "MaPl"
+difficulty = "Easy"
+
+flag = "susctf{84d1650f-597b-45c7-926e-733517dd7079}"
+
+description = """
+一张图片有flag，一张图片没有flag，两张图片长得差不多。
+"""
+
+[attachments]
+path = "task.zip"

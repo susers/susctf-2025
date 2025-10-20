@@ -1,0 +1,14 @@
+title = "一个饼干人"
+author = "318"
+difficulty = "Easy" 
+flag = "SUSCTF{cookies_GOOD}"
+
+description = """
+黄金起司饼干最棒了！
+
+---
+校内下载：https://pan.seu.edu.cn/link/064D32F1706D1760BA4F78A3588464B0
+"""
+
+[attachments]
+path = "https://ttttt.link/f/68dde89bc99f4"

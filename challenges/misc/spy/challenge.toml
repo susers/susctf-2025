@@ -1,0 +1,12 @@
+title = "spy"
+category = "OSINT"
+author = "135e2"
+difficulty = "Medium"
+flag = "susctf{Gveua7a_0n_5pY_[TEAM_HASH]}"
+
+description = """
+Mira, joven. Da me los pintos verde.
+"""
+
+[container]
+port = 8001

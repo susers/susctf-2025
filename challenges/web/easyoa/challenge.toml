@@ -1,0 +1,19 @@
+title = "easyoa"
+author = "slain"
+difficulty = "Medium"
+flag = "susctf{0A_1day_goTttT_[TEAM_HASH]}"
+
+description = """
+admin / easyoa@susctf@2025
+
+密码给你了，自己玩去吧
+
+提示：本题为0day，网上暂无可直接利用漏洞，需要自己代码审计，最终RCE
+"""
+
+[attachments]
+path = "http://www.rockoa.com/index.php?a=down&id=297"
+
+[container]
+port = 80
+memory = 256

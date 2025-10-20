@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUSCTF Task</title>
+    <link rel="stylesheet" href="/static/water.min.css" />
+    <script src="" type="module"></script>
+  </head>
+
+  <body>
+    <h3>spy</h3>
+    <img src="/static/booguevera.png" alt="来自一个神秘网站" />
+    <h3>提交答案</h3>
+    <blockquote>点击“提交”按钮后需要等待一段时间</blockquote>
+    <form>
+      <label for="a1">站长的工作电话是？</label>
+      <input id="a1" type="text" placeholder="请输入电话号码（10位）" />
+      <label for="a2">站长毕业于哪所高中？</label>
+      <input id="a2" type="text" placeholder="请输入英文全称" />
+      <button id="submit">提交</button>
+      <div id="rate"></div>
+      <progress id="progress" value="0" max="100" hidden>0%</progress>
+      <strong id="result"></strong>
+    </form>
+    <script type="module">
+      import {
+        caculateProof,
+        submitAnswer,
+        randomUUID,
+      } from "/static/susctf-helper.js";
+
+      const button = document.getElementById("submit");
+      const progress = document.getElementById("progress");
+      const rate = document.getElementById("rate");
+      const result = document.getElementById("result");
+
+      button.addEventListener("click", getFlag);
+      async function getFlag() {
+        result.innerText = "";
+        button.disabled = true;
+        button.innerText = "提交中...";
+        const answer = {
+          a1: document.getElementById("a1").value,
+          a2: document.getElementById("a2").value,
+        };
+        const token = randomUUID();
+        const beginTime = new Date().getTime();
+        const proof = await caculateProof(
+          answer,
+          token,
+          (v) => {
+            if (v == -1) {
+              progress.hidden = true;
+            } else {
+              progress.value = v * 100;
+            }
+          },
+          (v) => {
+            rate.innerText = "Rate: " + v + "k hashes/s";
+          },
+        );
+        console.log(proof);
+        const elapsedTime = new Date().getTime() - beginTime;
+        rate.innerText = "Time: " + elapsedTime + "ms";
+        try {
+          const req = await submitAnswer(answer, proof, token);
+          if (req.data) {
+            result.innerText = req.data;
+            result.style.color = "green";
+          } else {
+            result.innerText = req.error;
+            result.style.color = "red";
+          }
+        } catch (e) {
+          console.error(e);
+        } finally {
+          button.disabled = false;
+          button.innerText = "提交";
+          progress.hidden = true;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+#!/bin/bash
+echo $GZCTF_FLAG>_install/flag && \
+unset GZCTF_FLAG && \
+cd ./_install && \
+find . | cpio -o --format=newc > ../rootfs.img && \
+cd .. && \
+qemu-system-x86_64 \
+    -m 128M \
+    -nographic \
+    -monitor none \
+    -kernel ./bzImage \
+    -initrd  ./rootfs.img \
+    -append "root=/dev/ram rw console=ttyS0 quiet loglevel=1 oops=panic panic=0 kaslr" \
+    -smp cores=2,threads=1 \
+    -cpu kvm64,+smep,+smap

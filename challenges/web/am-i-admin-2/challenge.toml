@@ -1,0 +1,17 @@
+title = "am i admin? 2"
+author = "135e2"
+difficulty = "Easy"
+flag = "susctf{Ar3_U_1n5eNsi7ive_3n0ugh_[TEAM_HASH]}"
+
+description = """
+How to be an admin?
+
+Note: 压缩包密码为 am-i-admin flag （不包含susctf）的前19个字符
+"""
+
+[attachments]
+path = "build/**"
+password = "Unwr17teN_Js0n_K3y_"
+
+[container]
+port = 8080

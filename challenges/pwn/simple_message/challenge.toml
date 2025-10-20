@@ -1,0 +1,19 @@
+title = "simple_message"
+author = "ShouCheng"
+difficulty = "Easy" # "Easy", "Medium", "Hard", ~~or whatever you want~~
+description = """
+this is a simple message, try pwn it!
+"""
+
+flag = "flag{[TEAM_HASH]}"
+
+[attachments]
+path = "attachments/**"
+name = "attachments.zip"
+
+[container]
+port = 9999
+cpu = 1 # *0.1 cpu
+memory = 64 # MiB
+storage = 256 # MiB (includes image size)
+image = "ubuntu:latest"

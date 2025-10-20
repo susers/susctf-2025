@@ -1,0 +1,27 @@
+title = "06-nfsr3"
+author = "huangx607087"
+difficulty = "Medium"
+flag = "susctf{[GUID]}"
+
+description = """
+
+[群聊] SUS Crypto 出题讨论 (10)
+
+longque: 再出一个猜数字的题，猜对1000次给flag 🏁
+
+huangx607087: 那也太直接了 🤔，并且交互 1000 次，是不是有点多了？
+
+MaPl: 两个随机数产生器异或一下不就行了吗？😏
+
+huangx607087: 🤓👆 好了我知道该怎么出了。
+
+"""
+
+[container]
+port = 9999
+cpu = 3 # 0.1*1个cpu
+memory = 160 # unit: MiB
+storage = 400 # unit: MiB **注意：包含镜像大小**
+
+[attachments]
+path = ["build/src/task.py"]

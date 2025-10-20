@@ -1,0 +1,10 @@
+title = "01-All U Need"
+author = "huangx607087"
+difficulty = "Easy+"
+flag = "check src/"
+description = """
+> 解出来的数字需要`long_to_bytes`后提交。
+
+
+A???????n is all you need!
+"""

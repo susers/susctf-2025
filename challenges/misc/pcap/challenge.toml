@@ -1,0 +1,15 @@
+title = "pcap"
+author = "MaPl, 135e2"
+difficulty = "Easy"
+
+flag = "susctf{89c5701d-5a6d-4902-99a6-fc5a3cd3b873}"
+
+description = """
+别笑，你也过不了第二关🤭
+
+---
+校内下载：https://pan.seu.edu.cn/link/36A07CE214086E4BAF0C8C5860C56622
+"""
+
+[attachments]
+path = "task.zip"

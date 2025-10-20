@@ -1,0 +1,12 @@
+title = "eat-mian"
+author = "135e2"
+difficulty = "Easy"
+flag = "susctf{Mag1Cal_P7epr0ces$er_[TEAM_HASH]}"
+
+description = """
+我爱吃面🍜
+"""
+
+[container]
+port = 8001
+memory = 256

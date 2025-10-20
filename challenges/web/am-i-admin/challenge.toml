@@ -1,0 +1,14 @@
+title = "am i admin?"
+author = "135e2"
+difficulty = "Easy"
+flag = "susctf{Unwr17teN_Js0n_K3y_[TEAM_HASH]}"
+
+description = """
+How to be an admin?
+"""
+
+[attachments]
+path = "build/**"
+
+[container]
+port = 8080

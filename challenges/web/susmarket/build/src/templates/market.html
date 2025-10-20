@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+<div class="text-center">
+  <h1>Welcome to SUSMarket</h1>
+  <p>Browse, search, and buy products easily.</p>
+  <a class="btn btn-primary" href="{{ url_for('list_products') }}"
+    >Browse Products</a
+  >
+  <a class="btn btn-success" href="{{ url_for('search_products') }}"
+    >Search Products</a
+  >
+</div>
+{% endblock %}

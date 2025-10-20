@@ -1,0 +1,16 @@
+title = "make php greater again"
+author = "hardream"
+difficulty = "Medium"
+flag = "susctf{[GUID]}"
+
+description = """
+寻找你的链子
+"""
+
+[attachments]
+path = "build/**"
+
+[container]
+memory = 256
+port = 80
+

@@ -1,0 +1,14 @@
+title = "easyprint"
+author = "135e2"
+difficulty = "Easy"
+flag = "susctf{1a5y_me7a_lF1_[TEAM_HASH]}"
+
+description = """
+Easyprint PDFGen™ Kit
+"""
+
+[attachments]
+path = "build/**"
+
+[container]
+port = 5000

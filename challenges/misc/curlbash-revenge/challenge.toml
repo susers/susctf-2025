@@ -1,0 +1,14 @@
+title = "curlbash-revenge"
+author = "135e2, MaPl"
+difficulty = "Medium"
+flag = "susctf{ReveNg3!!!_n3veR_7Un_ba5h_UnAt7eNd3D_[TEAM_HASH]}"
+
+description = """
+这怎么可能呢？现在你不许骗我了。
+
+---
+本题附件同curlbash，仅更新了远程题目环境
+"""
+
+[container]
+port = 9999

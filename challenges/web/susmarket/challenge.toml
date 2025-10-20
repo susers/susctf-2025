@@ -1,0 +1,12 @@
+title = "SUSMarket"
+author = "135e2"
+difficulty = "Medium"
+flag = "susctf{pgSq1i_2_Rc3_[TEAM_HASH]}"
+
+description = """
+Enriching life with SUSMarket™, your favorite marketplace revived
+"""
+
+[container]
+port = 5000
+memory = 256

@@ -1,0 +1,9 @@
+title = "03-CrySignin"
+author = "huangx607087"
+difficulty = "Easy"
+flag = "check src/"
+description = """
+简单的离散对数计算题 :P，来自密码学课本，作为SUSCTF2025的签到题。
+
+注意：按照题目要求解出UUID类型的flag之后，请包上`susctf{}`提交！
+"""

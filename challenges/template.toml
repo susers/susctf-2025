@@ -1,0 +1,55 @@
+title = "title example"
+
+# note: category will be set automatically if not exists
+# category = "Misc" # "Misc", "Crypto", "Pwn", "Web", "Reverse"
+
+# note: type will be set automatically:
+#     if [container] is set,
+#         type will be set to "StaticContainer" or "DynamicContainer",
+#         depends on the value of:
+#             static = true/false
+#     otherwise, type will be set to "StaticAttachment"
+
+author = "your name"
+difficulty = "Easy" # "Easy", "Medium", "Hard", ~~or whatever you want~~
+# note: uncomment if you want a lower minimal score (default = 0.25)
+# min_score_rate = 0.2
+
+description = """
+    write markdown here (leading space will be stripped)
+"""
+
+# you can use template [GUID], [TEAM_HASH], etc
+flag = "flag{example}"
+
+# note: if you need multiple flags, use a list instead
+# warn: flag won't be deleted automatically
+# warn: **DynamicContainer** cannot have more than one flag
+# flag = ["flag{1}", "flag{2}"]
+
+[attachments]
+# path = "attachments/**"
+# path = ["hints/**", "attachments/**"]
+
+# note: if you want upload zip file directly, use a string endswith ".zip"
+# path = "task.zip"
+
+# if you want a remote attachment, start with http
+# path = "https://example.com"
+
+# you can have password for zips too
+# password = "password"
+
+# the name it will be renamed to
+# name = "attachments.zip"
+
+[container]
+port = 8080
+# optional below
+cpu = 1 # *0.1 cpu
+memory = 64 # MiB
+storage = 256 # MiB (includes image size)
+# note: if the flag is static, specify it as true
+# static = false
+# warn: image will be override by sys.argv[3] if exists
+image = "ubuntu:latest"

@@ -1,0 +1,19 @@
+title = "juicyfs"
+category = "Forensics"
+author = "idawnlight"
+difficulty = "Medium"
+
+description = """
+你说的对，但是「JuiceFS」是由杭州果汁数据科技有限公司自主研发的一款高性能、云原生分布式文件系统。中间忘了，总之逐步发掘「元数据」的真相。
+
+本题灵感来自真实事故 <a href="https://mirrors.seu.edu.cn/news/20250918-outage/" target="_blank" rel="noopener noreferrer">镜像站 09/18 服务异常中断 - 东南大学开源镜像站</a>。
+
+---
+
+备用附件下载：<a href="https://waseda.box.com/s/67x64g6jgsefj4wd0t9kku8ydlg4i7kd" target="_blank" rel="noopener noreferrer">https://waseda.box.com/s/67x64g6jgsefj4wd0t9kku8ydlg4i7kd</a>
+"""
+
+flag = "susctf{yOu_Ar3_ju1cef$_mAs7er!!1}"
+
+[attachments]
+path = "https://ttttt.link/f/68da71794e9be"

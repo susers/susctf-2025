@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Easyprint PDFGen Kit</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.53.0/min/vs/loader.min.js"></script>
+
+    <style>
+        /* Ensure the editor container fills its parent */
+        #editor {
+            width: 100%;
+            height: 70vh;
+            /* Rounded corners from Tailwind: rounded-md */
+            border: 1px solid #d1d5db;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans p-6">
+
+    <div class="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-3xl font-semibold mb-6 text-center text-blue-600">Easyprint PDFGen™ Kit</h1>
+
+        <form id="pdfForm" action="/generate_pdf" method="POST" class="flex flex-col">
+            <div id="editor" class="mb-6 rounded-md"></div>
+            <!-- Hidden textarea for form submission -->
+            <textarea id="html_content" name="html_content" class="hidden"></textarea>
+            <button type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition-colors">
+                Generate PDF
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Load Monaco editor
+        require.config({paths: {vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.53.0/min/vs'}});
+        require(['vs/editor/editor.main'], function () {
+            window.editor = monaco.editor.create(document.getElementById('editor'), {
+                value: `{{ default_html | safe }}`,
+                language: 'html',
+                theme: 'vs-light',
+                automaticLayout: true,
+                minimap: {enabled: false}
+            });
+
+            setTimeout(() => {
+                window.editor.getAction('editor.action.formatDocument').run();
+            }, 1000);
+        });
+
+        document.getElementById('pdfForm').addEventListener('submit', function (event) {
+            document.getElementById('html_content').value = window.editor.getValue();
+        });
+    </script>
+
+</body>
+
+</html>

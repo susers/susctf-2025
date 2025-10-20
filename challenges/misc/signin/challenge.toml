@@ -1,0 +1,12 @@
+title = "signin"
+author = "135e2"
+difficulty = "Easy"
+min_score_rate = 0.2
+flag = "susctf{SUS_we1c0me5_y0u_:D}"
+
+description = """
+where's the flag?
+"""
+
+[attachments]
+path = "poster.ai"

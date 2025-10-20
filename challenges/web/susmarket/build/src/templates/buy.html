@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<h2>Buy Product</h2>
+<div class="card p-3">
+  <h5>{{ product[1] }}</h5>
+  <p>Price: ${{ product[2] }}</p>
+  <p>Stock available: {{ product[3] }}</p>
+  <p>
+    Description: {% if "susctf" in product[4].lower() %} {{ "*" *
+    product[4]|length }} {% else %} {{ product[4] }} {% endif %}
+  </p>
+  <form method="post">
+    <label for="quantity">Quantity:</label>
+    <input
+      class="form-control"
+      type="number"
+      name="quantity"
+      value="1"
+      min="1"
+    />
+    <button class="btn btn-success mt-2" type="submit">Buy</button>
+  </form>
+</div>
+{% endblock %}

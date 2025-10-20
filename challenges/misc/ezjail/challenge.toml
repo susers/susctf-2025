@@ -1,0 +1,14 @@
+title = "easyjail"
+author = "135e2"
+difficulty = "Easy"
+flag = "susctf{Pr3l0ad_3scaPe_[TEAM_HASH]}"
+
+description = """
+try escape me
+"""
+
+[attachments]
+path = "build/**"
+
+[container]
+port = 9999

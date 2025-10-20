@@ -1,0 +1,14 @@
+title = "curlbash"
+author = "135e2, MaPl"
+difficulty = "Medium"
+flag = "susctf{n3veR_7Un_ba5h_UnAt7eNd3D_[TEAM_HASH]}"
+
+description = """
+这怎么可能呢？
+"""
+
+[attachments]
+path = "build/main.py"
+
+[container]
+port = 9999
