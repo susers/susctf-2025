@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>0x0.sus | Temporary file hoster</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1 style="text-align: center">0x0.sus | Your beloved file hosting service</h1>
+        <form action="/cgi-bin/upload.py" method="POST" enctype="multipart/form-data" id="uploadForm">
+            <label for="filename">Filename: </label>
+            <input id="filename" name="filename" type="text" placeholder="Required for filename" />
+
+            <label for="content">Paste or edit your content here:</label>
+            <textarea id="content" rows="10" placeholder="Your content here"></textarea>
+
+            <label for="fileupload">Or choose a file to upload:</label>
+            <input type="file" id="fileInput" name="file" />
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+
+<footer style="text-align: center; margin-top: 2em;">
+    <small>
+        Styled with <a href="https://picocss.com" target="_blank" rel="noopener noreferrer">Pico.css</a>; Inspired by <a
+            href="https://0x0.st" target="_blank" rel="noopener noreferrer">0x0.st</a>
+    </small>
+</footer>
+
+<script>
+    document.getElementById("uploadForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const content = document.getElementById("content").value;
+        const filename = document.getElementById("filename").value.trim();
+
+        if (filename) {
+            const blob = new Blob([content], {type: "text/plain"});
+            const file = new File([blob], filename, {type: "text/plain"});
+
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            const fileInput = document.getElementById("fileInput");
+            fileInput.files = dataTransfer.files;
+        }
+        this.submit();
+    });
+</script>
+
+</html>
